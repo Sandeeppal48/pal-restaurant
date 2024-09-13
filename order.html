@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Your Favorite Food</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #007bff;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 1rem;
+        }
+        .section {
+            margin: 2rem 0;
+            padding: 1rem;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .section h2 {
+            margin-top: 0;
+            color: #007bff;
+        }
+        .menu-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+        .menu-item img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-right: 1rem;
+        }
+        .menu-item-content {
+            flex: 1;
+        }
+        .menu-item h4 {
+            margin: 0;
+            color: #007bff;
+        }
+        .menu-item p {
+            margin: 0.5rem 0;
+        }
+        .price {
+            font-weight: bold;
+            color: #28a745;
+        }
+        .quantity {
+            display: flex;
+            align-items: center;
+        }
+        .quantity button {
+            background: #007bff;
+            color: #fff;
+            border: none;
+            padding: 0.5rem;
+            margin: 0 0.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .quantity input {
+            width: 40px;
+            text-align: center;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            padding: 0.5rem;
+        }
+        .cart-section {
+            margin: 2rem 0;
+        }
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #dee2e6;
+        }
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+        .cart-item span {
+            font-weight: bold;
+        }
+        .cart-item button {
+            background: #dc3545;
+            color: #fff;
+            border: none;
+            padding: 0.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .total {
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            font-weight: bold;
+        }
+        .checkout-button {
+            background: #28a745;
+            color: #fff;
+            border: none;
+            padding: 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Order Your Favorite Food</h1>
+</header>
+
+<div class="container">
+    <!-- Fast Food Section -->
+    <div class="section" id="fast-food-section">
+        <h2>Fast Food</h2>
+        <div class="menu-item" data-name="Chomin" data-price="250">
+            <img src="Chomin.jpg" alt="Chomin" />
+            <div class="menu-item-content">
+                <h4>Chomin</h4>
+                <p>Stir-fried noodles with vegetables and a savory sauce.</p>
+                <p class="price">₹250</p>
+                <div class="quantity">
+                    <button onclick="changeQuantity('Chomin', -1)">-</button>
+                    <input type="number" id="quantity-Chomin" value="0" min="0" readonly />
+                    <button onclick="changeQuantity('Chomin', 1)">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-item" data-name="Momos" data-price="200">
+            <img src="Momos.jpg" alt="Momos" />
+            <div class="menu-item-content">
+                <h4>Momos</h4>
+                <p>Steamed dumplings filled with vegetables or meat.</p>
+                <p class="price">₹200</p>
+                <div class="quantity">
+                    <button onclick="changeQuantity('Momos', -1)">-</button>
+                    <input type="number" id="quantity-Momos" value="0" min="0" readonly />
+                    <button onclick="changeQuantity('Momos', 1)">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-item" data-name="Burger" data-price="150">
+            <img src="Burger.jpg" alt="Burger" />
+            <div class="menu-item-content">
+                <h4>Burger</h4>
+                <p>Juicy beef patty with lettuce, tomato, and cheese in a soft bun.</p>
+                <p class="price">₹150</p>
+                <div class="quantity">
+                    <button onclick="changeQuantity('Burger', -1)">-</button>
+                    <input type="number" id="quantity-Burger" value="0" min="0" readonly />
+                    <button onclick="changeQuantity('Burger', 1)">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-item" data-name="Cheeseburger" data-price="180">
+            <img src="Cheeseburger.jpg" alt="Cheeseburger" />
+            <div class="menu-item-content">
+                <h4>Cheeseburger</h4>
+                <p>Beef patty with melted cheese, lettuce, and tomato in a bun.</p>
+                <p class="price">₹180</p>
+                <div class="quantity">
+                    <button onclick="changeQuantity('Cheeseburger', -1)">-</button>
+                    <input type="number" id="quantity-Cheeseburger" value="0" min="0" readonly />
+                    <button onclick="changeQuantity('Cheeseburger', 1)">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-item" data-name="Sandwich" data-price="120">
+            <img src="Sandwich.jpg" alt="Sandwich" />
+            <div class="menu-item-content">
+                <h4>Sandwich</h4>
+                <p>Freshly made sandwich with your choice of fillings.</p>
+                <p class="price">₹120</p>
+                <div class="quantity">
+                    <button onclick="changeQuantity('Sandwich', -1)">-</button>
+                    <input type="number" id="quantity-Sandwich" value="0" min="0" readonly />
+                    <button onclick="changeQuantity('Sandwich', 1)">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-item" data-name="Pizza" data-price="250">
+            <img src="Pizza.jpg" alt="Pizza" />
+            <div class="menu-item-content">
+                <h4>Pizza</h4>
+                <p>Delicious pizza with a variety of toppings and melted cheese.</p>
+                <p class="price">₹250</p>
+                <div class="quantity">
+                    <button onclick="changeQuantity('Pizza', -1)">-</button>
+                    <input type="number" id="quantity-Pizza" value="0" min="0" readonly />
+                    <button onclick="changeQuantity('Pizza', 1)">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-item" data-name="Hotdog" data-price="130">
+            <img src="Hotdog.jpg" alt="Hotdog" />
+            <div class="menu-item-content">
+                <h4>Hotdog</h4>
+                <p>Sausage in a bun with your choice of condiments.</p>
+                <p class="price">₹130</p>
+                <div class="quantity">
+                    <button onclick="changeQuantity('Hotdog', -1)">-</button>
+                    <input type="number" id="quantity-Hotdog" value="0" min="0" readonly />
+                    <button onclick="changeQuantity('Hotdog', 1)">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-item" data-name="Patties" data-price="100">
+            <img src="Patties.jpg" alt="Patties" />
+            <div class="menu-item-content">
+                <h4>Patties</h4>
+                <p>Crispy and savory patties filled with vegetables or meat.</p>
+                <p class="price">₹100</p>
+                <div class="quantity">
+                    <button onclick="changeQuantity('Patties', -1)">-</button>
+                    <input type="number" id="quantity-Patties" value="0" min="0" readonly />
+                    <button onclick="changeQuantity('Patties', 1)">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-item" data-name="Colddrinks" data-price="60">
+            <img src="Colddrinks.jpg" alt="Colddrinks" />
+            <div class="menu-item-content">
+                <h4>Colddrinks</h4>
+                <p>Refreshing cold drinks to complement your meal.</p>
+                <p class="price">₹60</p>
+                <div class="quantity">
+                    <button onclick="changeQuantity('Colddrinks', -1)">-</button>
+                    <input type="number" id="quantity-Colddrinks" value="0" min="0" readonly />
+                    <button onclick="changeQuantity('Colddrinks', 1)">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-item" data-name="Egg Omelete" data-price="90">
+            <img src="Egg_Omelete.jpg" alt="Egg Omelete" />
+            <div class="menu-item-content">
+                <h4>Egg Omelete</h4>
+                <p>Fluffy and flavorful omelet made with eggs and spices.</p>
+                <p class="price">₹90</p>
+                <div class="quantity">
+                    <button onclick="changeQuantity('Egg Omelete', -1)">-</button>
+                    <input type="number" id="quantity-Egg Omelete" value="0" min="0" readonly />
+                    <button onclick="changeQuantity('Egg Omelete', 1)">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-item" data-name="Egg Chomin" data-price="220">
+            <img src="Egg_Chomin.jpg" alt="Egg Chomin" />
+            <div class="menu-item-content">
+                <h4>Egg Chomin</h4>
+                <p>Egg noodles stir-fried with vegetables and a touch of spice.</p>
+                <p class="price">₹220</p>
+                <div class="quantity">
+                    <button onclick="changeQuantity('Egg Chomin', -1)">-</button>
+                    <input type="number" id="quantity-Egg Chomin" value="0" min="0" readonly />
+                    <button onclick="changeQuantity('Egg Chomin', 1)">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-item" data-name="Stem Momos" data-price="210">
+            <img src="Stem_Momos.jpg" alt="Stem Momos" />
+            <div class="menu-item-content">
+                <h4>Stem Momos</h4>
+                <p>Steamed dumplings with a savory filling of vegetables or meat.</p>
+                <p class="price">₹210</p>
+                <div class="quantity">
+                    <button onclick="changeQuantity('Stem Momos', -1)">-</button>
+                    <input type="number" id="quantity-Stem Momos" value="0" min="0" readonly />
+                    <button onclick="changeQuantity('Stem Momos', 1)">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-item" data-name="Chat" data-price="80">
+            <img src="Chat.jpg" alt="Chat" />
+            <div class="menu-item-content">
+                <h4>Chat</h4>
+                <p>A mix of spicy and tangy ingredients served as a snack.</p>
+                <p class="price">₹80</p>
+                <div class="quantity">
+                    <button onclick="changeQuantity('Chat', -1)">-</button>
+                    <input type="number" id="quantity-Chat" value="0" min="0" readonly />
+                    <button onclick="changeQuantity('Chat', 1)">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-item" data-name="Aaloo Tikki" data-price="70">
+            <img src="Aaloo_Tikki.jpg" alt="Aaloo Tikki" />
+            <div class="menu-item-content">
+                <h4>Aaloo Tikki</h4>
+                <p>Spicy potato patties served with chutneys.</p>
+                <p class="price">₹70</p>
+                <div class="quantity">
+                    <button onclick="changeQuantity('Aaloo Tikki', -1)">-</button>
+                    <input type="number" id="quantity-Aaloo Tikki" value="0" min="0" readonly />
+                    <button onclick="changeQuantity('Aaloo Tikki', 1)">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-item" data-name="Dahi Golgappe" data-price="100">
+            <img src="Dahi_Golgappe.jpg" alt="Dahi Golgappe" />
+            <div class="menu-item-content">
+                <h4>Dahi Golgappe</h4>
+                <p>Crispy puris filled with spicy yogurt and chutneys.</p>
+                <p class="price">₹100</p>
+                <div class="quantity">
+                    <button onclick="changeQuantity('Dahi Golgappe', -1)">-</button>
+                    <input type="number" id="quantity-Dahi Golgappe" value="0" min="0" readonly />
+                    <button onclick="changeQuantity('Dahi Golgappe', 1)">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-item" data-name="Badam Shake" data-price="140">
+            <img src="Badam_Shake.jpg" alt="Badam Shake" />
+            <div class="menu-item-content">
+                <h4>Badam Shake</h4>
+                <p>A creamy almond shake, perfect for a refreshing treat.</p>
+                <p class="price">₹140</p>
+                <div class="quantity">
+                    <button onclick="changeQuantity('Badam Shake', -1)">-</button>
+                    <input type="number" id="quantity-Badam Shake" value="0" min="0" readonly />
+                    <button onclick="changeQuantity('Badam Shake', 1)">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-item" data-name="Banana Shake" data-price="130">
+            <img src="Banana_Shake.jpg" alt="Banana Shake" />
+            <div class="menu-item-content">
+                <h4>Banana Shake</h4>
+                <p>Rich and creamy banana shake for a quick energy boost.</p>
+                <p class="price">₹130</p>
+                <div class="quantity">
+                    <button onclick="changeQuantity('Banana Shake', -1)">-</button>
+                    <input type="number" id="quantity-Banana Shake" value="0" min="0" readonly />
+                    <button onclick="changeQuantity('Banana Shake', 1)">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-item" data-name="Mango Shake" data-price="150">
+            <img src="Mango_Shake.jpg" alt="Mango Shake" />
+            <div class="menu-item-content">
+                <h4>Mango Shake</h4>
+                <p>Sweet and creamy mango shake to enjoy anytime.</p>
+                <p class="price">₹150</p>
+                <div class="quantity">
+                    <button onclick="changeQuantity('Mango Shake', -1)">-</button>
+                    <input type="number" id="quantity-Mango Shake" value="0" min="0" readonly />
+                    <button onclick="changeQuantity('Mango Shake', 1)">+</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Veg Food Section -->
+    <div class="section" id="veg-food-section">
+        <h2>Veg Food</h2>
+        <div class="menu-item" data-name="Aloo Gobi" data-price="180">
+            <img src="Aloo_Gobi.jpg" alt="Aloo Gobi" />
+            <div class="menu-item-content">
+                <h4>Aloo Gobi</h4>
+                <p>Spiced potatoes and cauliflower cooked to perfection.</p>
+                <p class="price">₹180</p>
+                <div class="quantity">
+                    <button onclick="changeQuantity('Aloo Gobi', -1)">-</button>
+                    <input type="number" id="quantity-Aloo Gobi" value="0" min="0" readonly />
+                    <button onclick="changeQuantity('Aloo Gobi', 1)">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-item" data-name="Paneer Tikka" data-price="250">
+            <img src="Paneer_Tikka.jpg" alt="Paneer Tikka" />
+            <div class="menu-item-content">
+                <h4>Paneer Tikka</h4>
+                <p>Grilled paneer marinated in spices and yogurt.</p>
+                <p class="price">₹250</p>
+                <div class="quantity">
+                    <button onclick="changeQuantity('Paneer Tikka', -1)">-</button>
+                    <input type="number" id="quantity-Paneer Tikka" value="0" min="0" readonly />
+                    <button onclick="changeQuantity('Paneer Tikka', 1)">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-item" data-name="Dal Makhni" data-price="200">
+            <img src="Dal_Makhni.jpg" alt="Dal Makhni" />
+            <div class="menu-item-content">
+                <h4>Dal Makhni</h4>
+                <p>Rich and creamy black lentils cooked with butter and cream.</p>
+                <p class="price">₹200</p>
+                <div class="quantity">
+                    <button onclick="changeQuantity('Dal Makhni', -1)">-</button>
+                    <input type="number" id="quantity-Dal Makhni" value="0" min="0" readonly />
+                    <button onclick="changeQuantity('Dal Makhni', 1)">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-item" data-name="Baingan Bharta" data-price="190">
+            <img src="Baingan_Bharta.jpg" alt="Baingan Bharta" />
+            <div class="menu-item-content">
+                <h4>Baingan Bharta</h4>
+                <p>Smoky roasted eggplant mashed with spices and herbs.</p>
+                <p class="price">₹190</p>
+                <div class="quantity">
+                    <button onclick="changeQuantity('Baingan Bharta', -1)">-</button>
+                    <input type="number" id="quantity-Baingan Bharta" value="0" min="0" readonly />
+                    <button onclick="changeQuantity('Baingan Bharta', 1)">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-item" data-name="Chili Paneer" data-price="230">
+            <img src="Chili_Paneer.jpg" alt="Chili Paneer" />
+            <div class="menu-item-content">
+                <h4>Chili Paneer</h4>
+                <p>Fried paneer cubes in a spicy and tangy sauce.</p>
+                <p class="price">₹230</p>
+                <div class="quantity">
+                    <button onclick="changeQuantity('Chili Paneer', -1)">-</button>
+                    <input type="number" id="quantity-Chili Paneer" value="0" min="0" readonly />
+                    <button onclick="changeQuantity('Chili Paneer', 1)">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-item" data-name="Pulao" data-price="170">
+            <img src="Pulao.jpg" alt="Pulao" />
+            <div class="menu-item-content">
+                <h4>Pulao</h4>
+                <p>Flavorful rice dish cooked with vegetables and spices.</p>
+                <p class="price">₹170</p>
+                <div class="quantity">
+                    <button onclick="changeQuantity('Pulao', -1)">-</button>
+                    <input type="number" id="quantity-Pulao" value="0" min="0" readonly />
+                    <button onclick="changeQuantity('Pulao', 1)">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-item" data-name="Samosa" data-price="60">
+            <img src="Samosa.jpg" alt="Samosa" />
+            <div class="menu-item-content">
+                <h4>Samosa</h4>
+                <p>Crispy pastry filled with spiced potatoes and peas.</p>
+                <p class="price">₹60</p>
+                <div class="quantity">
+                    <button onclick="changeQuantity('Samosa', -1)">-</button>
+                    <input type="number" id="quantity-Samosa" value="0" min="0" readonly />
+                    <button onclick="changeQuantity('Samosa', 1)">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-item" data-name="Dosa" data-price="120">
+            <img src="Dosa.jpg" alt="Dosa" />
+            <div class="menu-item-content">
+                <h4>Dosa</h4>
+                <p>Crispy crepes made from rice and lentil batter.</p>
+                <p class="price">₹120</p>
+                <div class="quantity">
+                    <button onclick="changeQuantity('Dosa', -1)">-</button>
+                    <input type="number" id="quantity-Dosa" value="0" min="0" readonly />
+                    <button onclick="changeQuantity('Dosa', 1)">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-item" data-name="Palak Paneer" data-price="220">
+            <img src="Palak_Paneer.jpg" alt="Palak Paneer" />
+            <div class="menu-item-content">
+                <h4>Palak Paneer</h4>
+                <p>Paneer cooked in a rich spinach gravy.</p>
+                <p class="price">₹220</p>
+                <div class="quantity">
+                    <button onclick="changeQuantity('Palak Paneer', -1)">-</button>
+                    <input type="number" id="quantity-Palak Paneer" value="0" min="0" readonly />
+                    <button onclick="changeQuantity('Palak Paneer', 1)">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-item" data-name="Malai Kofta" data-price="250">
+            <img src="Malai_Kofta.jpg" alt="Malai Kofta" />
+            <div class="menu-item-content">
+                <h4>Malai Kofta</h4>
+                <p>Deep-fried dumplings in a creamy tomato-based curry.</p>
+                <p class="price">₹250</p>
+                <div class="quantity">
+                    <button onclick="changeQuantity('Malai Kofta', -1)">-</button>
+                    <input type="number" id="quantity-Malai Kofta" value="0" min="0" readonly />
+                    <button onclick="changeQuantity('Malai Kofta', 1)">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-item" data-name="Paneer Makhni" data-price="240">
+            <img src="Paneer_Makhni.jpg" alt="Paneer Makhni" />
+            <div class="menu-item-content">
+                <h4>Paneer Makhni</h4>
+                <p>Paneer cooked in a rich and creamy tomato sauce.</p>
+                <p class="price">₹240</p>
+                <div class="quantity">
+                    <button onclick="changeQuantity('Paneer Makhni', -1)">-</button>
+                    <input type="number" id="quantity-Paneer Makhni" value="0" min="0" readonly />
+                    <button onclick="changeQuantity('Paneer Makhni', 1)">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-item" data-name="Pav Bhaji" data-price="200">
+            <img src="Pav_Bhaji.jpg" alt="Pav Bhaji" />
+            <div class="menu-item-content">
+                <h4>Pav Bhaji</h4>
+                <p>Spicy vegetable mash served with buttered bread rolls.</p>
+                <p class="price">₹200</p>
+                <div class="quantity">
+                    <button onclick="changeQuantity('Pav Bhaji', -1)">-</button>
+                    <input type="number" id="quantity-Pav Bhaji" value="0" min="0" readonly />
+                    <button onclick="changeQuantity('Pav Bhaji', 1)">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-item" data-name="Dum Aloo" data-price="190">
+            <img src="Dum_Aloo.jpg" alt="Dum Aloo" />
+            <div class="menu-item-content">
+                <h4>Dum Aloo</h4>
+                <p>Potatoes slow-cooked in a spiced gravy.</p>
+                <p class="price">₹190</p>
+                <div class="quantity">
+                    <button onclick="changeQuantity('Dum Aloo', -1)">-</button>
+                    <input type="number" id="quantity-Dum Aloo" value="0" min="0" readonly />
+                    <button onclick="changeQuantity('Dum Aloo', 1)">+</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Non-Veg Food Section -->
+    <div class="section" id="non-veg-food-section">
+        <h2>Non-Veg Food</h2>
+        <div class="menu-item" data-name="Chicken Curry" data-price="300">
+            <img src="Chicken_Curry.jpg" alt="Chicken Curry" />
+            <div class="menu-item-content">
+                <h4>Chicken Curry</h4>
+                <p>Tender chicken pieces simmered in a spicy curry sauce.</p>
+                <p class="price">₹300</p>
+                <div class="quantity">
+                    <button onclick="changeQuantity('Chicken Curry', -1)">-</button>
+                    <input type="number" id="quantity-Chicken Curry" value="0" min="0" readonly />
+                    <button onclick="changeQuantity('Chicken Curry', 1)">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-item" data-name="Mutton Rogan Josh" data-price="350">
+            <img src="Mutton_Rogan_Josh.jpg" alt="Mutton Rogan Josh" />
+            <div class="menu-item-content">
+                <h4>Mutton Rogan Josh</h4>
+                <p>Slow-cooked mutton in a rich and aromatic curry.</p>
+                <p class="price">₹350</p>
+                <div class="quantity">
+                    <button onclick="changeQuantity('Mutton Rogan Josh', -1)">-</button>
+                    <input type="number" id="quantity-Mutton Rogan Josh" value="0" min="0" readonly />
+                    <button onclick="changeQuantity('Mutton Rogan Josh', 1)">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-item" data-name="Fish Fry" data-price="280">
+            <img src="Fish_Fry.jpg" alt="Fish Fry" />
+            <div class="menu-item-content">
+                <h4>Fish Fry</h4>
+                <p>Crispy fried fish fillets seasoned with spices.</p>
+                <p class="price">₹280</p>
+                <div class="quantity">
+                    <button onclick="changeQuantity('Fish Fry', -1)">-</button>
+                    <input type="number" id="quantity-Fish Fry" value="0" min="0" readonly />
+                    <button onclick="changeQuantity('Fish Fry', 1)">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-item" data-name="Chicken Biryani" data-price="320">
+            <img src="Chicken_Biryani.jpg" alt="Chicken Biryani" />
+            <div class="menu-item-content">
+                <h4>Chicken Biryani</h4>
+                <p>Aromatic rice layered with spiced chicken.</p>
+                <p class="price">₹320</p>
+                <div class="quantity">
+                    <button onclick="changeQuantity('Chicken Biryani', -1)">-</button>
+                    <input type="number" id="quantity-Chicken Biryani" value="0" min="0" readonly />
+                    <button onclick="changeQuantity('Chicken Biryani', 1)">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-item" data-name="Prawn Masala" data-price="340">
+            <img src="Prawn_Masala.jpg" alt="Prawn Masala" />
+            <div class="menu-item-content">
+                <h4>Prawn Masala</h4>
+                <p>Succulent prawns cooked in a spicy masala sauce.</p>
+                <p class="price">₹340</p>
+                <div class="quantity">
+                    <button onclick="changeQuantity('Prawn Masala', -1)">-</button>
+                    <input type="number" id="quantity-Prawn Masala" value="0" min="0" readonly />
+                    <button onclick="changeQuantity('Prawn Masala', 1)">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-item" data-name="Tandoori Chicken" data-price="330">
+            <img src="Tandoori_Chicken.jpg" alt="Tandoori Chicken" />
+            <div class="menu-item-content">
+                <h4>Tandoori Chicken</h4>
+                <p>Spicy marinated chicken cooked in a tandoor.</p>
+                <p class="price">₹330</p>
+                <div class="quantity">
+                    <button onclick="changeQuantity('Tandoori Chicken', -1)">-</button>
+                    <input type="number" id="quantity-Tandoori Chicken" value="0" min="0" readonly />
+                    <button onclick="changeQuantity('Tandoori Chicken', 1)">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-item" data-name="Butter Chicken" data-price="340">
+            <img src="Butter_Chicken.jpg" alt="Butter Chicken" />
+            <div class="menu-item-content">
+                <h4>Butter Chicken</h4>
+                <p>Chicken cooked in a creamy and buttery tomato sauce.</p>
+                <p class="price">₹340</p>
+                <div class="quantity">
+                    <button onclick="changeQuantity('Butter Chicken', -1)">-</button>
+                    <input type="number" id="quantity-Butter Chicken" value="0" min="0" readonly />
+                    <button onclick="changeQuantity('Butter Chicken', 1)">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-item" data-name="Mutton Korma" data-price="360">
+            <img src="Mutton_Korma.jpg" alt="Mutton Korma" />
+            <div class="menu-item-content">
+                <h4>Mutton Korma</h4>
+                <p>Mutton slow-cooked in a creamy and aromatic sauce.</p>
+                <p class="price">₹360</p>
+                <div class="quantity">
+                    <button onclick="changeQuantity('Mutton Korma', -1)">-</button>
+                    <input type="number" id="quantity-Mutton Korma" value="0" min="0" readonly />
+                    <button onclick="changeQuantity('Mutton Korma', 1)">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-item" data-name="Chicken Seekh Kebab" data-price="290">
+            <img src="Chicken_Seekh_Kebab.jpg" alt="Chicken Seekh Kebab" />
+            <div class="menu-item-content">
+                <h4>Chicken Seekh Kebab</h4>
+                <p>Spiced chicken minced and grilled on skewers.</p>
+                <p class="price">₹290</p>
+                <div class="quantity">
+                    <button onclick="changeQuantity('Chicken Seekh Kebab', -1)">-</button>
+                    <input type="number" id="quantity-Chicken Seekh Kebab" value="0" min="0" readonly />
+                    <button onclick="changeQuantity('Chicken Seekh Kebab', 1)">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-item" data-name="Kebab Platter" data-price="350">
+            <img src="Kebab_Platter.jpg" alt="Kebab Platter" />
+            <div class="menu-item-content">
+                <h4>Kebab Platter</h4>
+                <p>A variety of grilled kebabs served with dips.</p>
+                <p class="price">₹350</p>
+                <div class="quantity">
+                    <button onclick="changeQuantity('Kebab Platter', -1)">-</button>
+                    <input type="number" id="quantity-Kebab Platter" value="0" min="0" readonly />
+                    <button onclick="changeQuantity('Kebab Platter', 1)">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-item" data-name="Rogan Josh" data-price="350">
+            <img src="Rogan_Josh.jpg" alt="Rogan Josh" />
+            <div class="menu-item-content">
+                <h4>Rogan Josh</h4>
+                <p>Hearty and flavorful slow-cooked mutton curry.</p>
+                <p class="price">₹350</p>
+                <div class="quantity">
+                    <button onclick="changeQuantity('Rogan Josh', -1)">-</button>
+                    <input type="number" id="quantity-Rogan Josh" value="0" min="0" readonly />
+                    <button onclick="changeQuantity('Rogan Josh', 1)">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-item" data-name="Chicken Tikka Masala" data-price="310">
+            <img src="Chicken_Tikka_Masala.jpg" alt="Chicken Tikka Masala" />
+            <div class="menu-item-content">
+                <h4>Chicken Tikka Masala</h4>
+                <p>Grilled chicken pieces cooked in a spiced tomato sauce.</p>
+                <p class="price">₹310</p>
+                <div class="quantity">
+                    <button onclick="changeQuantity('Chicken Tikka Masala', -1)">-</button>
+                    <input type="number" id="quantity-Chicken Tikka Masala" value="0" min="0" readonly />
+                    <button onclick="changeQuantity('Chicken Tikka Masala', 1)">+</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Section -->
+    <div class="section" id="cart-section">
+        <h2>Cart</h2>
+        <div id="cart-items"></div>
+        <p id="total-price">Total: ₹0</p>
+        <button onclick="checkout()">Checkout</button>
+    </div>
+
+    <script>
+        function changeQuantity(itemName, change) {
+            const quantityInput = document.getElementById(`quantity-${itemName}`);
+            let quantity = parseInt(quantityInput.value);
+            quantity += change;
+            if (quantity < 0) quantity = 0;
+            quantityInput.value = quantity;
+            updateCart();
+        }
+
+        function updateCart() {
+            const cartItems = document.getElementById('cart-items');
+            const totalPriceElement = document.getElementById('total-price');
+            cartItems.innerHTML = '';
+            let totalPrice = 0;
+
+            document.querySelectorAll('.menu-item').forEach(item => {
+                const name = item.getAttribute('data-name');
+                const price = parseInt(item.getAttribute('data-price'));
+                const quantity = parseInt(document.getElementById(`quantity-${name}`).value);
+
+                if (quantity > 0) {
+                    const cartItem = document.createElement('div');
+                    cartItem.textContent = `${name}: ${quantity} x ₹${price} = ₹${quantity * price}`;
+                    cartItems.appendChild(cartItem);
+                    totalPrice += quantity * price;
+                }
+            });
+
+            totalPriceElement.textContent = `Total: ₹${totalPrice}`;
+        }
+
+        function checkout() {
+            alert('Thank you for your order!');
+            document.getElementById('cart-items').innerHTML = '';
+            document.getElementById('total-price').textContent = 'Total: ₹0';
+            document.querySelectorAll('.menu-item input').forEach(input => input.value = 0);
+        }
+    </script>
+</body>
+</html>

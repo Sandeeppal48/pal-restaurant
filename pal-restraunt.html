@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pal Restaurant</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .phone-number {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .phone-number:hover {
+            background-color: #0056b3;
+        }
+
+        .menu-icon {
+            position: absolute;
+            top: 60px; /* Adjust this based on the height of your header */
+            left: 10px;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            z-index: 1000;
+        }
+
+        .menu-icon div {
+            width: 30px;
+            height: 4px;
+            background-color: black;
+            border-radius: 2px;
+        }
+
+        .overlay-menu {
+            display: none; /* Hidden by default */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8); /* Dark semi-transparent background */
+            z-index: 999;
+            color: white;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow: auto;
+        }
+
+        .overlay-menu a {
+            display: block;
+            text-decoration: none;
+            color: white;
+            padding: 15px;
+            font-size: 24px; /* Large font size */
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .overlay-menu a:last-child {
+            border-bottom: none;
+        }
+
+        .overlay-menu.active {
+            display: block; /* Show the overlay when active */
+        }
+
+        .src1 {
+            width: 100%;
+        }
+
+        .map-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+        }
+
+        .map-container iframe {
+            width: 80%;
+            height: 400px;
+            border: 0;
+        }
+
+        .footer__bar {
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: var(--text-light);
+  text-align: center;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h2>PAL RESTAURANT</h2>
+    </header>
+
+    <div class="menu-icon" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <div class="overlay-menu" id="menu">
+        <a href="menu.html">Menu</a>
+        <a href="order.html">Order</a>
+        <a href="offer.html">Offer</a>
+        <a href="aboutus.html">About Us</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <a href="tel:+1234567890" class="phone-number">
+        +1 (234) 567-890
+    </a>
+
+    <div class="content">
+        <img src="first.jpeg" alt="Image1" class="src1">
+
+        <div style="text-align: center; margin: 20px 0; position:relative;">
+            <span style="font-family: toggle;">THE FOOD VILLAGE</span><br><br>
+            <span style="font-style: font-style;">This Restaurant is open 24X7</span>
+        </div>
+
+        <div style="text-align: center; margin: 20px 0; position:relative;">
+            <span>The Food Village - the multi-cuisine buffet restaurant is situated in the Clementown Dehradun. Luxury dining with special themed buffets.</span>
+        </div>
+
+        <div style="text-align: center; margin: 20px 0;">
+            <img src="second.jpg" alt="Centered Image" style="display: block; margin: 0 auto;">
+        </div>
+
+        <h1 style="text-align: center; margin: 20px 0; position:relative;">Our Location</h1>
+        <div class="map-container">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.1485270739607!2d-122.420679984681!3d37.77902657975927!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085808cb0d04bd1%3A0x84582b5d8b145df7!2s1%20Market%20St%2C%20San%20Francisco%2C%20CA%2094141!5e0!3m2!1sen!2sus!4v1606792430865!5m2!1sen!2sus"
+                allowfullscreen="" loading="lazy">
+            </iframe>
+        </div>
+    </div>
+
+    <div class="footer__bar">
+        Copyright © 2024 Sandep Pal @PAL RESTAURANT. All rights reserved.
+      </div>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('active');
+        }
+
+        // Close the menu if clicking outside of it
+        document.addEventListener('click', function(event) {
+            const menu = document.getElementById('menu');
+            const menuIcon = document.querySelector('.menu-icon');
+
+            if (!menu.contains(event.target) && !menuIcon.contains(event.target)) {
+                menu.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

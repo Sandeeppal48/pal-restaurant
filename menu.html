@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurant Menu</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .menu-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .menu-section {
+            margin-bottom: 40px;
+        }
+
+        .menu-section h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .menu-item {
+            display: flex;
+            align-items: center;
+            background: #fff;
+            margin: 10px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            padding: 10px;
+        }
+
+        .menu-item img {
+            width: 150px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .menu-item-content {
+            margin-left: 20px;
+        }
+
+        .menu-item h4 {
+            margin: 0;
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        .menu-item p {
+            margin: 5px 0;
+            color: #666;
+        }
+
+        .price {
+            font-size: 1.1em;
+            color: #333;
+        }
+
+        .rating {
+            display: flex;
+            align-items: center;
+            margin-top: 5px;
+        }
+
+        .rating i {
+            color: gold;
+            margin-right: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="menu-container">
+
+        <!-- Fast Food Section -->
+<div class="fast-food-section">
+    <h2>Fast Food Section</h2>
+
+    <div class="menu-item">
+        <img src="Chomin.jpg" alt="Chomin" />
+        <div class="menu-item-content">
+            <h4>Chomin</h4>
+            <p>Stir-fried noodles with vegetables and a savory sauce.</p>
+            <div class="rating">
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-half-line"></i>
+                <i class="ri-star-line"></i>
+            </div>
+            <p class="price">₹250</p>
+        </div>
+    </div>
+
+    <div class="menu-item">
+        <img src="Momos.jpg" alt="Momos" />
+        <div class="menu-item-content">
+            <h4>Momos</h4>
+            <p>Steamed dumplings filled with minced meat or vegetables.</p>
+            <div class="rating">
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-half-line"></i>
+            </div>
+            <p class="price">₹300</p>
+        </div>
+    </div>
+
+    <div class="menu-item">
+        <img src="Burger.jpg" alt="Burger" />
+        <div class="menu-item-content">
+            <h4>Burger</h4>
+            <p>A classic burger with a juicy patty, lettuce, tomato, and cheese.</p>
+            <div class="rating">
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-half-line"></i>
+                <i class="ri-star-line"></i>
+            </div>
+            <p class="price">₹350</p>
+        </div>
+    </div>
+
+    <div class="menu-item">
+        <img src="Cheeseburger.jpg" alt="Cheeseburger" />
+        <div class="menu-item-content">
+            <h4>Cheeseburger</h4>
+            <p>A burger topped with melted cheese and all the classic fixings.</p>
+            <div class="rating">
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-half-line"></i>
+            </div>
+            <p class="price">₹370</p>
+        </div>
+    </div>
+
+    <div class="menu-item">
+        <img src="Sandwich.jpg" alt="Sandwich" />
+        <div class="menu-item-content">
+            <h4>Sandwich</h4>
+            <p>A hearty sandwich with your choice of fillings and condiments.</p>
+            <div class="rating">
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-line"></i>
+                <i class="ri-star-line"></i>
+            </div>
+            <p class="price">₹250</p>
+        </div>
+    </div>
+
+    <div class="menu-item">
+        <img src="Pizza.jpg" alt="Pizza" />
+        <div class="menu-item-content">
+            <h4>Pizza</h4>
+            <p>A delicious pizza with cheese and a variety of toppings.</p>
+            <div class="rating">
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-half-line"></i>
+            </div>
+            <p class="price">₹400</p>
+        </div>
+    </div>
+
+    <div class="menu-item">
+        <img src="Hotdog.jpg" alt="Hot Dog" />
+        <div class="menu-item-content">
+            <h4>Hot Dog</h4>
+            <p>A grilled sausage in a bun, topped with mustard and ketchup.</p>
+            <div class="rating">
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-half-line"></i>
+                <i class="ri-star-line"></i>
+            </div>
+            <p class="price">₹200</p>
+        </div>
+    </div>
+
+    <div class="menu-item">
+        <img src="Patties.jpg" alt="Patties" />
+        <div class="menu-item-content">
+            <h4>Patties</h4>
+            <p>Crispy pastries filled with spiced vegetables or meat.</p>
+            <div class="rating">
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-line"></i>
+                <i class="ri-star-line"></i>
+            </div>
+            <p class="price">₹150</p>
+        </div>
+    </div>
+
+    <div class="menu-item">
+        <img src="Colddrinks.jpg" alt="Cold Drinks" />
+        <div class="menu-item-content">
+            <h4>Cold Drinks</h4>
+            <p>Refreshing beverages to cool you down on a hot day.</p>
+            <div class="rating">
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-line"></i>
+                <i class="ri-star-line"></i>
+            </div>
+            <p class="price">₹100</p>
+        </div>
+    </div>
+
+    <div class="menu-item">
+        <img src="Egg_Omelette.jpg" alt="Egg Omelette" />
+        <div class="menu-item-content">
+            <h4>Egg Omelette</h4>
+            <p>A fluffy omelette with your choice of fillings.</p>
+            <div class="rating">
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-line"></i>
+            </div>
+            <p class="price">₹180</p>
+        </div>
+    </div>
+
+    <div class="menu-item">
+        <img src="Egg_Chomin.jpg" alt="Egg Chomin" />
+        <div class="menu-item-content">
+            <h4>Egg Chomin</h4>
+            <p>Noodles stir-fried with eggs and vegetables.</p>
+            <div class="rating">
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-half-line"></i>
+                <i class="ri-star-line"></i>
+            </div>
+            <p class="price">₹270</p>
+        </div>
+    </div>
+
+    <div class="menu-item">
+        <img src="Stem_Momos.jpg" alt="Stem Momos" />
+        <div class="menu-item-content">
+            <h4>Stem Momos</h4>
+            <p>Delicate steamed dumplings with a choice of filling.</p>
+            <div class="rating">
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-half-line"></i>
+            </div>
+            <p class="price">₹320</p>
+        </div>
+    </div>
+
+    <div class="menu-item">
+        <img src="Chat.jpg" alt="Chat" />
+        <div class="menu-item-content">
+            <h4>Chat</h4>
+            <p>Popular street food with a mix of spicy, tangy, and sweet flavors.</p>
+            <div class="rating">
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-line"></i>
+            </div>
+            <p class="price">₹200</p>
+        </div>
+    </div>
+
+    <div class="menu-item">
+        <img src="Aaloo_Tikki.jpg" alt="Aaloo Tikki" />
+        <div class="menu-item-content">
+            <h4>Aaloo Tikki</h4>
+            <p>Crispy potato patties served with chutneys.</p>
+            <div class="rating">
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-line"></i>
+            </div>
+            <p class="price">₹180</p>
+        </div>
+    </div>
+
+    <div class="menu-item">
+        <img src="Dahi_Golgappe.jpg" alt="Dahi Golgappe" />
+        <div class="menu-item-content">
+            <h4>Dahi Golgappe</h4>
+            <p>Crispy puris filled with spicy water, yogurt, and tamarind chutney.</p>
+            <div class="rating">
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-half-line"></i>
+            </div>
+            <p class="price">₹220</p>
+        </div>
+    </div>
+
+    <div class="menu-item">
+        <img src="Badam_Shake.jpg" alt="Badam Shake" />
+        <div class="menu-item-content">
+            <h4>Badam Shake</h4>
+            <p>A creamy shake made with almonds and milk.</p>
+            <div class="rating">
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-half-line"></i>
+            </div>
+            <p class="price">₹220</p>
+        </div>
+    </div>
+
+    <div class="menu-item">
+        <img src="Banana_Shake.jpg" alt="Banana Shake" />
+        <div class="menu-item-content">
+            <h4>Banana Shake</h4>
+            <p>A sweet and creamy shake made with ripe bananas.</p>
+            <div class="rating">
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-half-line"></i>
+            </div>
+            <p class="price">₹200</p>
+        </div>
+    </div>
+
+    <div class="menu-item">
+        <img src="Mango_Shake.jpg" alt="Mango Shake" />
+        <div class="menu-item-content">
+            <h4>Mango Shake</h4>
+            <p>A delicious shake made with fresh mangoes and milk.</p>
+            <div class="rating">
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-half-line"></i>
+            </div>
+            <p class="price">₹220</p>
+        </div>
+    </div>
+
+</div>
+
+
+        <!-- Veg Section -->
+        <div class="menu-section" id="veg">
+            <h1>Vegetarian Delights</h1>
+
+            <div class="menu-item">
+                <img src="aalo-gobi.jpg" alt="Aloo Gobi" />
+                <div class="menu-item-content">
+                    <h4>Aloo Gobi</h4>
+                    <p>A vegetarian dish made with potatoes, cauliflower, and spices.</p>
+                    <div class="rating">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-half-line"></i>
+                        <i class="ri-star-line"></i>
+                    </div>
+                    <p class="price">₹250</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src="paneertikka.jpg" alt="Paneer Tikka" />
+                <div class="menu-item-content">
+                    <h4>Paneer Tikka</h4>
+                    <p>Grilled paneer marinated in yogurt and spices, served with mint chutney.</p>
+                    <div class="rating">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-half-line"></i>
+                    </div>
+                    <p class="price">₹350</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src="dalmakhani.jpg" alt="Dal Makhani" />
+                <div class="menu-item-content">
+                    <h4>Dal Makhani</h4>
+                    <p>Black lentils cooked in a creamy tomato sauce with a blend of spices.</p>
+                    <div class="rating">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-line"></i>
+                    </div>
+                    <p class="price">₹300</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src="Baingan_Bharta.jpg" alt="Baingan Bharta" />
+                <div class="menu-item-content">
+                    <h4>Baingan Bharta</h4>
+                    <p>Smoky mashed eggplant cooked with tomatoes, onions, and spices.</p>
+                    <div class="rating">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-half-line"></i>
+                        <i class="ri-star-line"></i>
+                    </div>
+                    <p class="price">₹280</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src="Chilli_Paneer.jpg" alt="Chilli Paneer" />
+                <div class="menu-item-content">
+                    <h4>Chilli Paneer</h4>
+                    <p>Fried paneer cubes tossed in a spicy, tangy sauce with bell peppers.</p>
+                    <div class="rating">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-half-line"></i>
+                        <i class="ri-star-line"></i>
+                    </div>
+                    <p class="price">₹320</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src="pulao.jpg" alt="Pulao" />
+                <div class="menu-item-content">
+                    <h4>Pulao</h4>
+                    <p>A fragrant rice dish cooked with mixed vegetables and aromatic spices.</p>
+                    <div class="rating">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-half-line"></i>
+                        <i class="ri-star-line"></i>
+                    </div>
+                    <p class="price">₹270</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src="Samosa.jpg" alt="Samosa" />
+                <div class="menu-item-content">
+                    <h4>Samosa</h4>
+                    <p>Deep-fried pastry filled with spiced potatoes and peas.</p>
+                    <div class="rating">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-half-line"></i>
+                    </div>
+                    <p class="price">₹150</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src="sambhar.jpg" alt="Dosa" />
+                <div class="menu-item-content">
+                    <h4>Dosa</h4>
+                    <p>Crispy rice crepe served with sambar and coconut chutney.</p>
+                    <div class="rating">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-line"></i>
+                    </div>
+                    <p class="price">₹200</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src="Palak-Paneer.jpg" alt="Palak Paneer" />
+                <div class="menu-item-content">
+                    <h4>Palak Paneer</h4>
+                    <p>Cottage cheese cubes cooked in a rich spinach gravy.</p>
+                    <div class="rating">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-half-line"></i>
+                    </div>
+                    <p class="price">₹320</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src="Malai-Kofta.jpg" alt="Malai Kofta" />
+                <div class="menu-item-content">
+                    <h4>Malai Kofta</h4>
+                    <p>Deep-fried cheese balls in a creamy tomato-based gravy.</p>
+                    <div class="rating">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-half-line"></i>
+                    </div>
+                    <p class="price">₹350</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src="Paneer-Makhani.jpg" alt="Paneer Makhani" />
+                <div class="menu-item-content">
+                    <h4>Paneer Makhani</h4>
+                    <p>Cottage cheese cooked in a rich and creamy tomato sauce.</p>
+                    <div class="rating">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-half-line"></i>
+                    </div>
+                    <p class="price">₹350</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src="Pav-Bhaji.jpg" alt="Pav Bhaji" />
+                <div class="menu-item-content">
+                    <h4>Pav Bhaji</h4>
+                    <p>A spicy vegetable mash served with buttered bread rolls.</p>
+                    <div class="rating">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-half-line"></i>
+                    </div>
+                    <p class="price">₹280</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src="Dum-Aalo.jpg" alt="Dum Aloo" />
+                <div class="menu-item-content">
+                    <h4>Dum Aloo</h4>
+                    <p>Potatoes cooked slowly in a spiced gravy.</p>
+                    <div class="rating">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-half-line"></i>
+                        <i class="ri-star-line"></i>
+                    </div>
+                    <p class="price">₹270</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src="Khandvi.jpg" alt="Khandvi" />
+                <div class="menu-item-content">
+                    <h4>Khandvi</h4>
+                    <p>Thin, spiced, and steamed gram flour rolls.</p>
+                    <div class="rating">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-line"></i>
+                        <i class="ri-star-line"></i>
+                    </div>
+                    <p class="price">₹200</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src="Paneer-Bhurji.jpg" alt="Paneer Bhurji" />
+                <div class="menu-item-content">
+                    <h4>Paneer Bhurji</h4>
+                    <p>Scrambled cottage cheese cooked with spices and vegetables.</p>
+                    <div class="rating">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-half-line"></i>
+                        <i class="ri-star-line"></i>
+                    </div>
+                    <p class="price">₹270</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src="Idli_with_sambar_and_chutney.jpg" alt="Idli Sambar" />
+                <div class="menu-item-content">
+                    <h4>Idli Sambar</h4>
+                    <p>Steamed rice cakes served with spicy lentil soup and chutneys.</p>
+                    <div class="rating">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-line"></i>
+                    </div>
+                    <p class="price">₹220</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src="Undhiyu.jpg" alt="Undhiyu" />
+                <div class="menu-item-content">
+                    <h4>Undhiyu</h4>
+                    <p>A Gujarati mixed vegetable dish cooked with a variety of spices.</p>
+                    <div class="rating">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-half-line"></i>
+                    </div>
+                    <p class="price">₹350</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src="Sabudana-Vada.jpg" alt="Sabudana Vada" />
+                <div class="menu-item-content">
+                    <h4>Sabudana Vada</h4>
+                    <p>Deep-fried vada made from sago pearls, potatoes, and spices.</p>
+                    <div class="rating">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-line"></i>
+                    </div>
+                    <p class="price">₹180</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src="Vada-Pav-2.jpg" alt="Vada Pav" />
+                <div class="menu-item-content">
+                    <h4>Vada Pav</h4>
+                    <p>A spicy potato fritter served in a bread roll, a popular Mumbai street food.</p>
+                    <div class="rating">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-line"></i>
+                    </div>
+                    <p class="price">₹100</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src="Pani-Puri.jpg" alt="Pani Puri" />
+                <div class="menu-item-content">
+                    <h4>Pani Puri</h4>
+                    <p>Crispy hollow puris filled with spicy tamarind water, potatoes, and chickpeas.</p>
+                    <div class="rating">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-line"></i>
+                    </div>
+                    <p class="price">₹150</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Non-Veg Section -->
+        <div class="menu-section" id="non-veg">
+            <h1>Non-Vegetarian Delights</h1>
+
+            <!-- Sample Non-Veg Items -->
+            <div class="menu-item">
+                <img src="Butter_Chicken.jpg" alt="Butter Chicken" />
+                <div class="menu-item-content">
+                    <h4>Butter Chicken</h4>
+                    <p>A creamy and flavorful chicken dish cooked with tomatoes, cream, and spices.</p>
+                    <div class="rating">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-half-line"></i>
+                    </div>
+                    <p class="price">₹400</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src="Chicken_Korma.jpg" alt="Chicken Korma" />
+                <div class="menu-item-content">
+                    <h4>Chicken Korma</h4>
+                    <p>A rich and aromatic chicken curry with a blend of spices and cream.</p>
+                    <div class="rating">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-half-line"></i>
+                    </div>
+                    <p class="price">₹420</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src="Mutton_Curry.jpg" alt="Mutton Curry" />
+                <div class="menu-item-content">
+                    <h4>Mutton Curry</h4>
+                    <p>Spicy and tender mutton pieces cooked in a flavorful gravy.</p>
+                    <div class="rating">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-line"></i>
+                    </div>
+                    <p class="price">₹450</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src="Fish_Curry.jpg" alt="Fish Curry" />
+                <div class="menu-item-content">
+                    <h4>Fish Curry</h4>
+                    <p>Fish pieces cooked in a tangy and spicy curry sauce.</p>
+                    <div class="rating">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-half-line"></i>
+                        <i class="ri-star-line"></i>
+                    </div>
+                    <p class="price">₹350</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src="Chicken_Tikka.jpg" alt="Chicken Tikka" />
+                <div class="menu-item-content">
+                    <h4>Chicken Tikka</h4>
+                    <p>Grilled chicken marinated in yogurt and spices, served with mint chutney.</p>
+                    <div class="rating">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-half-line"></i>
+                    </div>
+                    <p class="price">₹370</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src="Chicken_Biryani.jpg" alt="Chicken Biryani" />
+                <div class="menu-item-content">
+                    <h4>Chicken Biryani</h4>
+                    <p>Fragrant basmati rice cooked with spiced chicken and saffron.</p>
+                    <div class="rating">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-half-line"></i>
+                    </div>
+                    <p class="price">₹420</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src="Mutton_Korma.jpg" alt="Mutton Korma" />
+                <div class="menu-item-content">
+                    <h4>Mutton Korma</h4>
+                    <p>Tender mutton pieces cooked in a creamy, nut-based sauce.</p>
+                    <div class="rating">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-half-line"></i>
+                    </div>
+                    <p class="price">₹450</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src="Goan_Prawn_Curry.jpg" alt="Goan Prawn Curry" />
+                <div class="menu-item-content">
+                    <h4>Goan Prawn Curry</h4>
+                    <p>Spicy prawns cooked with coconut and Goan spices.</p>
+                    <div class="rating">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-half-line"></i>
+                    </div>
+                    <p class="price">₹400</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src="Chicken_Masala.jpg" alt="Chicken Masala" />
+                <div class="menu-item-content">
+                    <h4>Chicken Masala</h4>
+                    <p>Chicken pieces cooked in a spicy, tomato-based gravy.</p>
+                    <div class="rating">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-line"></i>
+                    </div>
+                    <p class="price">₹370</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src="Keema.jpg" alt="Keema" />
+                <div class="menu-item-content">
+                    <h4>Keema</h4>
+                    <p>Minced meat cooked with spices, onions, and tomatoes.</p>
+                    <div class="rating">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-half-line"></i>
+                    </div>
+                    <p class="price">₹400</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src="Chicken_Seekh_Kebab.jpg" alt="Chicken Seekh Kebab" />
+                <div class="menu-item-content">
+                    <h4>Chicken Seekh Kebab</h4>
+                    <p>Minced chicken mixed with spices and grilled on skewers.</p>
+                    <div class="rating">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-half-line"></i>
+                    </div>
+                    <p class="price">₹380</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src="Chilli_Chicken.jpg" alt="Chili Chicken" />
+                <div class="menu-item-content">
+                    <h4>Chili Chicken</h4>
+                    <p>Fried chicken pieces tossed in a spicy, tangy sauce.</p>
+                    <div class="rating">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-line"></i>
+                    </div>
+                    <p class="price">₹370</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src="Chicken_Keema.jpg" alt="Chicken Keema" />
+                <div class="menu-item-content">
+                    <h4>Chicken Keema</h4>
+                    <p>Minced chicken cooked with spices and vegetables.</p>
+                    <div class="rating">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-half-line"></i>
+                    </div>
+                    <p class="price">₹370</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
